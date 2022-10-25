@@ -5,15 +5,11 @@ def cirle_number(n):
     start_time = time.time()
     end_list = []
     list_simple_numbers = []
-    for i in range(1, n+1):
+    for i in range(1, n+1,2):
         lsit_circle_nubmer = []
         i_round = round(i**0.5)
 
         for d in range(2, i_round+1):
-            i = str(i)
-            if i.count('0') > 0 or i.count('2') > 0 or i.count('4') > 0 or i.count('6') > 0 or i.count('8') > 0:
-                break
-            i = int(i)
             if i%d==0:
                 lsit_circle_nubmer.append(i)
 
@@ -49,7 +45,7 @@ def cirle_number(n):
                 if cnt_a == len_a:
                     end_list.append(int(z))
     time_program = ((time.time() - start_time))
-    return len(end_list)-1, time_program
+    return len(end_list), time_program
 
 
 
@@ -58,4 +54,4 @@ def cirle_number(n):
 
 
 if __name__ == "__main__":
-    print(cirle_number(10000))
+    print(cirle_number(100000))
